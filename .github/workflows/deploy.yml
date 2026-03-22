@@ -21,8 +21,9 @@ jobs:
             # Loyiha papkasiga kiramiz (agar papka nomi boshqacha bo'lsa, o'zgartiring)
             cd /var/www/allfoods-premium-landing || exit
             
-            # Yangi kodlarni tortamiz
-            git pull origin main
+            # Serverdagi eski build fayllari xalaqit bermasligi uchun majburan tortamiz
+            git fetch --all
+            git reset --hard origin/main
             
             # Kutubxonalarni o'rnatamiz
             npm install
