@@ -1,0 +1,4 @@
+{
+  "/[...catchAll]/page": "app/[...catchAll]/page.js",
+  "/page": "app/page.js"
+}
