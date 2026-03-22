@@ -139,7 +139,7 @@ export const TrustSection: React.FC = () => {
         <img 
           alt="AllFoods Premium Quality" 
           className="w-full h-full object-cover opacity-90" 
-          src="/brand.png" 
+          src="/brand.avif" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex flex-col justify-end p-8 md:p-16 lg:p-16">
           
