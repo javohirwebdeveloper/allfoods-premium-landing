@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'AllFoods',
     images: [
       {
-        url: '/logo.png',
+        url: '/logo-big.png',
         width: 800,
         height: 600,
         alt: 'AllFoods Premium Quality',
