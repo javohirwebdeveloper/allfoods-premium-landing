@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'AllFoods - Премиум продукты.',
-    description: "AllFoods — это система, построенная на прямых закупках у поставщиков и умных алгоритмах логистики.",
+    description: "AllFoods — платформа прямых закупок у поставщиков с оптимизированной логистикой.",
     url: 'https://allfoods.uz',
     siteName: 'AllFoods',
     images: [
