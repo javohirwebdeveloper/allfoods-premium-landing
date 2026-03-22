@@ -28,7 +28,7 @@ export const Concept: React.FC = () => {
   return (
     <section className="py-24 px-6 bg-[#f9f9fb]">
       <div className="max-w-4xl mx-auto space-y-12">
-        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#747871]">
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
           {tx({uz: "Qanday ishlaydi", ru: "Как это работает"})}
         </span>
         <motion.p 
@@ -125,7 +125,7 @@ const Step: React.FC<{ number: number, title: React.ReactNode, desc: React.React
     <div className="absolute left-0 lg:static lg:mb-6 top-1 w-8 h-8 rounded-full bg-[#e2e2e4] border border-[#c4c8c0] flex items-center justify-center text-xs font-bold z-10 mx-0">
       {number}
     </div>
-    <h4 className="text-lg lg:text-xl font-bold mb-2">{title}</h4>
+    <h3 className="text-lg lg:text-xl font-bold mb-2">{title}</h3>
     <p className="text-[#5f5e60] leading-relaxed max-w-sm">{desc}</p>
   </div>
 );
@@ -138,6 +138,8 @@ export const TrustSection: React.FC = () => {
       <div className="max-w-7xl mx-auto overflow-hidden rounded-xl bg-zinc-900 aspect-[4/5] lg:aspect-[21/9] relative group">
         <img 
           alt="AllFoods Premium Quality" 
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover opacity-90" 
           src="/brand.avif" 
         />

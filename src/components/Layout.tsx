@@ -9,7 +9,7 @@ export const Navigation: React.FC = () => {
     <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-xl">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
         <a href="/" className="flex items-center">
-          <img src="/logo.png" alt="AllFoods Logo" className="h-10 w-auto" />
+          <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto" />
         </a>
         <div className="hidden md:flex space-x-8">
           <a className="nav-link nav-link-primary" href="#">
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
     <footer className="w-full border-t border-zinc-200 bg-zinc-50">
       <div className="flex flex-col md:flex-row justify-between items-center py-12 px-8 max-w-7xl mx-auto">
         <div className="mb-8 md:mb-0">
-          <img src="/logo.png" alt="AllFoods Logo" className="h-10 w-auto opacity-90 grayscale contrast-200 hover:grayscale-0 transition-all duration-300" />
+          <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto opacity-90 grayscale contrast-200 hover:grayscale-0 transition-all duration-300" />
         </div>
         <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
           <a className="font-sans text-xs tracking-wide uppercase text-zinc-500 hover:underline decoration-zinc-300 underline-offset-4 transition ease-in-out duration-200" href="#">{tx({uz: "Maxfiylik siyosati", ru: "Политика конфиденциальности"})}</a>
