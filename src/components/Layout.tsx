@@ -53,12 +53,6 @@ export const Footer: React.FC = () => {
         <div className="mb-8 md:mb-0">
           <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto opacity-90 grayscale contrast-200 hover:grayscale-0 transition-all duration-300" />
         </div>
-        <div className="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
-          <a className="font-sans text-xs tracking-wide uppercase text-zinc-500 hover:underline decoration-zinc-300 underline-offset-4 transition ease-in-out duration-200" href="#">{tx({uz: "Maxfiylik siyosati", ru: "Политика конфиденциальности"})}</a>
-          <a className="font-sans text-xs tracking-wide uppercase text-zinc-500 hover:underline decoration-zinc-300 underline-offset-4 transition ease-in-out duration-200" href="#">{tx({uz: "Foydalanish shartlari", ru: "Условия использования"})}</a>
-          <a className="font-sans text-xs tracking-wide uppercase text-zinc-500 hover:underline decoration-zinc-300 underline-offset-4 transition ease-in-out duration-200" href="#">LinkedIn</a>
-          <a className="font-sans text-xs tracking-wide uppercase text-zinc-500 hover:underline decoration-zinc-300 underline-offset-4 transition ease-in-out duration-200" href="#">Instagram</a>
-        </div>
         <div className="font-sans text-xs tracking-wide uppercase text-zinc-500">{tx({uz: "© 2026 AllFoods. Barcha huquqlar himoyalangan.", ru: "© 2026 AllFoods. Все права защищены."})}</div>
       </div>
     </footer>
