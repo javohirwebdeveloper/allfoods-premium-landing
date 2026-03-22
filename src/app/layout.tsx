@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     apple: '/logo-icon.png',
   },
   openGraph: {
-    title: 'AllFoods - Premium Mahsulotlar',
-    description: "Eng saralangan va toza oziq-ovqat mahsulotlarini uyingizgacha qulay vaqtda olib kelamiz.",
+    title: 'AllFoods - Премиум продукты.',
+    description: "AllFoods — это система, построенная на прямых закупках у поставщиков и умных алгоритмах логистики.",
     url: 'https://allfoods.uz',
     siteName: 'AllFoods',
     images: [
