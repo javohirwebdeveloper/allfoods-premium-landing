@@ -1,30 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../i18n/LanguageContext';
 import { motion } from 'motion/react';
 
 export const Navigation: React.FC = () => {
   const { language, setLanguage, tx } = useTranslation();
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['about', 'services', 'how-it-works', 'contact'];
+      let currentSection = '';
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Check if the section is currently in the viewport
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial check
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const getLinkClass = (section: string) => {
+    const isActive = activeSection === section;
+    return `nav-link ${isActive ? 'nav-link-primary font-semibold' : 'nav-link-secondary'}`;
+  };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-xl">
+    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-sm">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
-        <a href="/" className="flex items-center">
+        <a href="#" className="flex items-center">
           <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto" />
         </a>
         <div className="hidden md:flex space-x-8">
-          <a className="nav-link nav-link-primary" href="#">
+          <a className={getLinkClass('about')} href="#about">
             {tx({ uz: "Biz haqimizda", ru: "О нас" })}
           </a>
 
-          <a className="nav-link nav-link-secondary" href="#">
+          <a className={getLinkClass('how-it-works')} href="#how-it-works">
             {tx({ uz: "Qanday ishlaydi", ru: "Как это работает" })}
           </a>
 
-          <a className="nav-link nav-link-secondary" href="#">
+          <a className={getLinkClass('services')} href="#services">
             {tx({ uz: "Xizmatlar", ru: "Услуги" })}
           </a>
 
-          <a className="nav-link nav-link-secondary" href="#">
+          <a className={getLinkClass('contact')} href="#contact">
             {tx({ uz: "Aloqa", ru: "Контакты" })}
           </a>
         </div>
@@ -48,7 +79,7 @@ export const Footer: React.FC = () => {
   const { tx } = useTranslation();
 
   return (
-    <footer className="w-full border-t border-zinc-200 bg-zinc-50">
+    <footer id="contact" className="w-full border-t border-zinc-200 bg-zinc-50">
       <div className="flex flex-col md:flex-row justify-between items-center py-12 px-8 max-w-7xl mx-auto">
         <div className="mb-8 md:mb-0">
           <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto opacity-90 grayscale contrast-200 hover:grayscale-0 transition-all duration-300" />

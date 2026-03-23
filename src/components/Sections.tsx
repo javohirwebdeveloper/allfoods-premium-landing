@@ -26,10 +26,10 @@ export const Concept: React.FC = () => {
   const { tx } = useTranslation();
 
   return (
-    <section className="py-24 px-6 bg-[#f9f9fb]">
+    <section id="about" className="py-24 px-6 bg-[#f9f9fb] scroll-mt-8">
       <div className="max-w-4xl mx-auto space-y-12">
         <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600">
-          {tx({uz: "Qanday ishlaydi", ru: "Как это работает"})}
+          {tx({uz: "Biz haqimizda", ru: "О нас"})}
         </span>
         <motion.p 
           initial={{ opacity: 0 }}
@@ -51,7 +51,7 @@ export const ValueProposition: React.FC = () => {
   const { tx } = useTranslation();
 
   return (
-    <section className="py-24 px-6 bg-[#f3f3f5]">
+    <section id="services" className="py-24 px-6 bg-[#f3f3f5] scroll-mt-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ValueCard 
@@ -87,11 +87,11 @@ export const HowItWorks: React.FC = () => {
   const { tx } = useTranslation();
 
   return (
-    <section className="py-24 px-6 bg-[#f9f9fb]">
+    <section id="how-it-works" className="py-24 px-6 bg-[#f9f9fb] scroll-mt-2">
       <div className="max-w-5xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-[#111312]">
-            {tx({uz: "Nega aynan biz?", ru: "Почему мы?"})}
+            {tx({uz: "Qanday ishlaydi?", ru: "Как это работает?"})}
           </h2>
           
         </div>
