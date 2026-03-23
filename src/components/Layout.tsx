@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl shadow-sm">
+    <nav className="fixed top-0 w-full z-50 bg-white/90">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
         <a href="#" className="flex items-center">
           <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto" />
@@ -49,10 +49,6 @@ export const Navigation: React.FC = () => {
 
           <a className={getLinkClass('how-it-works')} href="#how-it-works">
             {tx({ uz: "Qanday ishlaydi", ru: "Как это работает" })}
-          </a>
-
-          <a className={getLinkClass('services')} href="#services">
-            {tx({ uz: "Xizmatlar", ru: "Услуги" })}
           </a>
 
           <a className={getLinkClass('contact')} href="#contact">
