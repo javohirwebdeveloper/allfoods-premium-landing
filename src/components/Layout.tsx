@@ -37,7 +37,7 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/90">
+    <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 h-16">
         <a href="#" className="flex items-center">
           <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto" />
