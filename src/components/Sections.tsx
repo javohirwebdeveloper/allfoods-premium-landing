@@ -37,7 +37,9 @@ export const Concept: React.FC = () => {
           transition={{ duration: 1 }}
           className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed text-[#444842]"
         >
-          {tx({ uz: "AllFoods – bu to'g'ridan-to'g'ri manbadan xarid qilish va aqlli logistika algoritmlari asosida qurilgan tizim. Biz oziq-ovqat yetkazib berish zanjirini qayta ko‘rib chiqdik, ortiqcha xarajatlarsiz, eng saralangan mahsulotlarni xonadoningizga olib kelamiz.", ru: "AllFoods — платформа прямых закупок у поставщиков с оптимизированной логистикой. Мы пересмотрели цепочку поставок продуктов питания: без лишних затрат доставляем отборные продукты прямо к вам домой." })}
+          {tx({
+            uz: "AllFoods — bu to‘g‘ridan-to‘g‘ri manbadan oziq-ovqat mahsulotlarini xarid qilish va aqlli logistika algoritmlari asosida qurilgan tizim. Biz yetkazib berish zanjirini qayta optimallashtirdik — ortiqcha xarajatlarsiz, eng saralangan mahsulotlarni xonadoningizgacha yetkazamiz.", ru: "AllFoods — платформа прямых закупок у поставщиков с оптимизированной логистикой. Мы пересмотрели цепочку поставок продуктов питания: без лишних затрат доставляем отборные продукты прямо к вам домой."
+          })}
         </motion.p>
         <p className="text-lg md:text-xl leading-loose text-[#5f5e60] font-light">
           {tx({uz: "Sunʼiy intellekt va texnologiya uyg'unligi orqali biz har bir mahsulotning logistik yo'lini optimallashtirdik. Bu esa sizga yuqori sifatni hamyonbop narxlarda taqdim etish imkonini beradi.", ru: "Благодаря сочетанию искусственного интеллекта и технологий мы оптимизировали логистический путь каждого продукта. Это позволяет нам предлагать вам высокое качество по доступным ценам."})}
