@@ -5,7 +5,7 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://allfoods.uz'),
   title: {
-    default: 'AllFoods - Premium oziq-ovqat yetkazish',
+    default: 'AllFoods - Premium oziq-ovqat mahsulotlari yetkazish',
     template: '%s | AllFoods'
   },
   description: "Uydan chiqmay turib eng yangi, hamyonbop va toza mahsulotlarni buyurtma qiling. AllFoods — sizning ishonchli va tezkor xarid yordamchingiz.",
