@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     apple: '/logo-icon.png',
   },
   openGraph: {
-    title: 'AllFoods - Премиум продукты.',
+    title: 'AllFoods — премиум продукты питания',
     description: "AllFoods — платформа прямых закупок у поставщиков с оптимизированной логистикой.",
     url: 'https://allfoods.uz',
     siteName: 'AllFoods',
