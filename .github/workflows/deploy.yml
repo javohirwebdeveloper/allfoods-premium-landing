@@ -1,35 +1,29 @@
-name: Deploy to VPS
+name: Deploy Landing Page
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: ["main", "master"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: SSH and Deploy
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Server via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
-            # Loyiha papkasiga kiramiz (agar papka nomi boshqacha bo'lsa, o'zgartiring)
-            cd /var/www/allfoods-premium-landing || exit
-            
-            # Serverdagi eski build fayllari xalaqit bermasligi uchun majburan tortamiz
+            set -e
+            cd /var/www/allfoods-landing
             git fetch --all
-            git reset --hard origin/main
-            
-            # Kutubxonalarni o'rnatamiz
+            git reset --hard origin/main || git reset --hard origin/master
             npm install
-            
-            # Next.js loyihani build qilamiz
             npm run build
-            
-            # PM2 orqali 3003-portda qayta ishga tushiramiz (PM2 global o'rnatilgan bo'lishi kerak)
-            pm2 restart allfoods-landing || pm2 start npm --name "allfoods-landing" -- run start -- -p 3003
+            pm2 delete allfoods-landing 2>/dev/null || true
+            pm2 start npm --name allfoods-landing -- run start -- -p 3003
+            pm2 save
+            echo "✅ Landing deploy muvaffaqiyatli!"
