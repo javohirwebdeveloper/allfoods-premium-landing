@@ -109,12 +109,12 @@ export const HowItWorks: React.FC = () => {
           <Step 
             number={2} 
             title={tx({uz: "Yig'ish", ru: "Сборка"})} 
-            desc={tx({uz: "Yigitlarimiz buyurtmangizni xuddi o'zlariga olgandek e'tibor bilan terib, qadoqlarga joylashadi.", ru: "Наши сборщики аккуратно собирают ваш заказ как для себя и упаковывают его."})} 
+            desc={tx({uz: "Mutaxassislarimiz buyurtmangizni xuddi o'zlariga olgandek e'tibor bilan saralab, maxsus qadoqlarga joylashadi.", ru: "Наши специалисты аккуратно собирают ваш заказ как для себя и упаковывают его в специальную упаковку."})} 
           />
           <Step 
             number={3} 
             title={tx({uz: "Yetkazish", ru: "Доставка"})} 
-            desc={tx({uz: "Kuryerlarimiz siz ilovada belgilagan vaqtda, mahsulotlarni tagida ezib qo'ymasdan uyingizgacha olib kelishadi.", ru: "Наши курьеры доставляют продукты до вашей двери в назначенное вами время, сохраняя их идеальный вид."})} 
+            desc={tx({uz: "Kuryerlarimiz belgilangan vaqtda, mahsulotlar yangiligini saqlagan holda uyingizgacha yetkazib berishadi.", ru: "Наши курьеры доставляют продукты до вашей двери в назначенное время, сохраняя их свежесть."})} 
           />
         </div>
       </div>
@@ -163,22 +163,26 @@ export const EarlyAccess: React.FC = () => {
     <section className="py-32 px-6 bg-[#e8e8ea]">
       <div className="max-w-3xl mx-auto text-center space-y-10">
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-          {tx({uz: "Birinchilardan bo'ling.", ru: "Будьте первыми."})}
+          {tx({uz: "Premium sifat — endi yanada yaqin", ru: "Премиум качество — теперь еще ближе"})}
         </h2>
         <p className="text-[#5f5e60] font-light md:text-xl">
-          {tx({uz: "Biz tez orada ishga tushamiz. Yangiliklar va maxsus takliflardan xabardor bo'lish uchun Instagram sahifamizga obuna bo'ling.", ru: "Мы скоро запустимся. Подписывайтесь на нашу страницу в Instagram, чтобы быть в курсе новостей."})}
+          {tx({
+            uz: "Buyurtmalarni @allfoodsuzbot Telegram boti orqali amalga oshirishingiz mumkin. Botda sun'iy intellekt va zamonaviy Mini App imkoniyatlari mavjud.", 
+            ru: "Заказы принимаются через Telegram-бот @allfoodsuzbot. Бот оснащен искусственным интеллектом и современным Mini App."
+          })}
         </p>
         <div className="flex justify-center pt-8">
           <a 
-            href="https://instagram.com/allfoods.uz"
+            href="https://t.me/allfoodsuzbot"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full md:w-auto bg-[#1a1c1d] text-white py-4 px-10 rounded-xl font-medium tracking-wide transition-all active:scale-95 hover:bg-black cursor-pointer inline-flex items-center justify-center shadow-lg hover:shadow-xl"
           >
-            {tx({uz: "Instagram'ga o'tish", ru: "Перейти в Instagram"})}
+            {tx({uz: "Telegram botda buyurtma berish", ru: "Заказать в Telegram боте"})}
           </a>
         </div>
       </div>
     </section>
   );
 };
+

@@ -56,15 +56,15 @@ export const translations = {
       desc: 'Har bir mahsulot individual nazoratdan o\'tadi va faqat eng a\'lo darajadagilari sizga yetib boradi.'
     },
     earlyAccess: {
-      title: 'Birinchilardan bo\'ling.',
-      desc: 'Biz tez orada ishga tushamiz. Yangiliklar va maxsus takliflardan xabardor bo\'lish uchun ro\'yxatdan o\'ting.',
+      title: 'Premium sifat — endi yanada yaqin',
+      desc: "Buyurtmalarni @allfoodsuzbot Telegram boti orqali amalga oshirishingiz mumkin. Botda sun'iy intellekt va zamonaviy Mini App imkoniyatlari mavjud.",
       placeholder: 'Email manzilingiz',
-      button: 'Early Access'
+      button: 'Telegram botda buyurtma berish'
     },
     footer: {
       privacy: 'Maxfiylik siyosati',
       terms: 'Foydalanish shartlari',
-      rights: '© 2024 AllFoods. Barcha huquqlar himoyalangan.'
+      rights: '© 2026 AllFoods. Barcha huquqlar himoyalangan.'
     }
   },
   ru: {
@@ -122,15 +122,15 @@ export const translations = {
       desc: 'Каждый продукт проходит индивидуальный контроль, и до вас доходят только самые лучшие.'
     },
     earlyAccess: {
-      title: 'Будьте первыми.',
-      desc: 'Мы скоро запустимся. Зарегистрируйтесь, чтобы быть в курсе новостей и специальных предложений.',
+      title: 'Премиум качество — теперь еще ближе',
+      desc: 'Заказы принимаются через Telegram-бот @allfoodsuzbot. Бот оснащен искусственным интеллектом и современным Mini App.',
       placeholder: 'Ваш Email',
-      button: 'Ранний доступ'
+      button: 'Заказать в Telegram боте'
     },
     footer: {
       privacy: 'Политика конфиденциальности',
       terms: 'Условия использования',
-      rights: '© 2024 AllFoods. Все права защищены.'
+      rights: '© 2026 AllFoods. Все права защищены.'
     }
   }
 };
