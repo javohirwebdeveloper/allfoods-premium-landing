@@ -81,11 +81,7 @@ export const Footer: React.FC = () => {
           <img src="/logo.png" alt="AllFoods Logo" width={159} height={70} className="h-10 w-auto opacity-90 grayscale contrast-200 hover:grayscale-0 transition-all duration-300" />
         </div>
         <div className="text-right">
-          <div className="font-sans text-xs tracking-wide uppercase text-zinc-500">{tx({uz: "© 2026 AllFoods. Barcha huquqlar himoyalangan.", ru: "© 2026 AllFoods. Все права защищены."})}</div>
-          <div className="font-sans text-[11px] text-zinc-400 mt-2 leading-relaxed">
-            <div>{tx({uz: "Yuridik shaxs: SAFAYEVA NARGIZA UBAYDULLAYEVNA", ru: "Юридическое лицо: САФАЕВА НАРГИЗА УБАЙДУЛЛАЕВНА"})}</div>
-            <div>{tx({uz: "Manzil: Toshkent shahri, Shayxontohur tumani, Poligrafiya berk ko'chasi, 7-A uy", ru: "Адрес: г. Ташкент, Шайхантахурский район, тупик Полиграфия, дом 7-А"})}</div>
-          </div>
+          <div className="font-sans text-xs tracking-wide uppercase text-zinc-500">{tx({ uz: "© 2026 AllFoods. Barcha huquqlar himoyalangan.", ru: "© 2026 AllFoods. Все права защищены." })}</div>
         </div>
       </div>
     </footer>
