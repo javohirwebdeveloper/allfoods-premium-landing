@@ -31,7 +31,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: 44332
+          port: 22
           source: ".next,public,package.json,package-lock.json,next.config.*"
           target: "/var/www/allfoods-landing"
           strip_components: 0
@@ -42,7 +42,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: 44332
+          port: 22
           script: |
             set -e
             cd /var/www/allfoods-landing
