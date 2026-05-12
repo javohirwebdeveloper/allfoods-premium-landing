@@ -2,10 +2,12 @@ name: Deploy Landing Page
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: ["TEST"]
 
 jobs:
   deploy:
+    environment: TEST-SERVER
+    if: github.ref == 'refs/heads/TEST'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,9 +28,9 @@ jobs:
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           port: 44332
           source: ".next,public,package.json,package-lock.json,next.config.*"
           target: "/var/www/allfoods-landing"
@@ -37,9 +39,9 @@ jobs:
       - name: Restart app on server
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           port: 44332
           script: |
             set -e
