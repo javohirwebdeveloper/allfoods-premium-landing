@@ -2,12 +2,11 @@ name: Deploy Landing Page
 
 on:
   push:
-    branches: ["TEST"]
+    branches: ["main", "master", "TEST"]
 
 jobs:
   deploy:
-    environment: TEST-SERVER
-    if: github.ref == 'refs/heads/TEST'
+    environment: ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && 'PROD-SERVER' || 'TEST-SERVER' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,28 +28,28 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
-      - name: Copy files to server
+      - name: Deploy to VPS
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
-          source: ".next,.env,public,package.json,package-lock.json,next.config.*"
+          port: ${{ secrets.SSH_PORT }}
+          source: ".next,public,package.json,package-lock.json,next.config.*,.env"
           target: "/var/www/allfoods-landing"
           strip_components: 0
 
-      - name: Restart app on server
+      - name: Restart WebApp
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          port: 22
+          port: ${{ secrets.SSH_PORT }}
           script: |
-            set -e
             cd /var/www/allfoods-landing
-            npm ci --omit=dev
-            pm2 restart allfoods-landing 2>/dev/null || pm2 start npm --name allfoods-landing -- run start -- -p 3003
+            npm install --production
+            npm run build
+            pm2 restart allfoods-premium || pm2 start npm --name "allfoods-premium" -- run start -- -p 3003
             pm2 save
             echo "✅ Landing deploy muvaffaqiyatli!"
