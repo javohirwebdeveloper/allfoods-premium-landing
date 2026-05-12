@@ -22,6 +22,10 @@ jobs:
         run: |
           npm install
           npm run build
+
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
@@ -32,7 +36,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: ".next,public,package.json,package-lock.json,next.config.*"
+          source: ".next,.env,public,package.json,package-lock.json,next.config.*"
           target: "/var/www/allfoods-landing"
           strip_components: 0
 
