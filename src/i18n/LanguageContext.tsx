@@ -15,8 +15,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const pathname = usePathname() || '/';
   const router = useRouter();
-  
-  // Determine language from URL
+
   const getLangFromPath = (path: string): Language => {
     if (path.startsWith('/ru')) return 'ru';
     return 'uz';
